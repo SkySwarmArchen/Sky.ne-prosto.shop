@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #e5fdff, #d9fcff);
+    color: #333;
+  }
+  
+  header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Относится к фильтру */
+    padding: 20px; /* Относится к фильтру */
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+   display: none; /* Относится к фильтру */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    filter: blur(8px); /* Относится к блюру */
+    transition: filter 0.3s ease; /* Относится к блюру */
+  }
+
+  .image-wrapper img.clear { /* <--- Относится к блюру */
+    filter: none;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-price {
+    color: #4a90e2;
+    font-size: 1rem;
+  }
+  
+  .card-hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 117, 252, 0.9);
+    color: white;
+    padding: 10px;
+    font-size: 0.9rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .card:hover .card-hover-info {
+    transform: translateY(0);
+  }
+
+
+
+/* Начинается фильтр */
+  .card.show {
+    display: block;
+  }
+
+  .filter-section {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .filter-btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background-color: #357ac8;
+  }
+/* Заканчивается фильтр */
+
+
+
+/* Начинается Модальное окно */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .modal-content img {
+    max-width: 90%;
+    border-radius: 10px;
+  }
+
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: black;
+  }
+  /* Заканчивается Модальное окно */

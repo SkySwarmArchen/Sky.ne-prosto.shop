@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky.shop</title>
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+
+  <style>
+
+    /* Блюр */
+    .blur {
+      filter: blur(8px);
+    }
+
+
+  </style>
+
+
+
+</head>
+<body>
+  <header>
+    Добро пожаловать в лучший интернет-магазин — Sky.shop!
+  </header>
+
+  <div class="filter-section">
+    <button class="filter-btn" onclick="filterCards('all')">Все</button>
+    <button class="filter-btn" onclick="filterCards('home')">Техника для дома и офиса</button>
+    <button class="filter-btn" onclick="filterCards('gadgets')">Смартфоны и гаджеты</button>
+    <button class="filter-btn" onclick="filterCards('audio')">Аудио и аксессуары</button>
+    <button class="filter-btn" onclick="filterCards('peripherals')">Периферия и ввод</button>
+    <button class="filter-btn" onclick="filterCards('network')">Сети и хранилища</button>
+    <button class="filter-btn" onclick="filterCards('entertainment')">Развлечения и фото</button>
+    <!-- <button class="filter-btn" onclick="filterCards('LEEE')">ЛЕЕЕ</button> -->
+  </div>
+
+  <main class="container">
+    
+        <!-- Карточка 1 -->
+    <div class="card audio show"> <!-- Фильтр -->
+      <div class="image-wrapper"> <!-- Класс для фотографии -->
+        <img src="https://avatars.mds.yandex.net/i?id=43a6223a078292763c914c4d0a9b1128a0d8b4b5-4119748-images-thumbs&n=13" alt="Наушники X100"> <!-- Сама карточка - фотография -->
+      </div>
+      <div class="card-content"> <!-- Класс для текста карточки -->
+        <div class="card-title">Наушники X100</div> <!-- Название -->
+        <div class="card-price">3 499 ₽</div> <!-- Цена -->
+      </div>
+      <div class="card-hover-info">Беспроводные, шумоподавление.</div> <!-- Информация при наведении -->
+    </div>
+
+        <!-- Карточка 2 -->
+    <div class="card gadgets show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/get-yabs_performance/14724728/hat5e11e9abfe95ef522521feb437c38cdf/hugeX" alt="Смарт-часы Z50">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Смарт-часы Z50</div>
+        <div class="card-price">5 999 ₽</div>
+      </div>
+      <div class="card-hover-info">Мониторинг пульса, водонепроницаемость.</div>
+    </div>
+
+        <!-- Карточка 3 -->
+    <div class="card home show">
+      <div class="image-wrapper">
+        <img src="https://cdn1.ozone.ru/s3/multimedia-a/6244343962.jpg" alt="Кофеварка Aroma">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Кофеварка Aroma</div>
+        <div class="card-price">2 790 ₽</div>
+      </div>
+      <div class="card-hover-info">Компактная, для дома и офиса.</div>
+    </div>
+
+        <!-- Карточка 4 -->
+    <div class="card gadgets show">
+      <div class="image-wrapper">
+        <img src="https://img.tehnomaks.ru/img/prod/full/16849997325655.jpeg" alt="Планшет Tab10">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Планшет Tab10</div>
+        <div class="card-price">12 990 ₽</div>
+      </div>
+      <div class="card-hover-info">10" дисплей, 64 ГБ памяти.</div>
+    </div>
+
+        <!-- Карточка 5 -->
+    <div class="card network show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/get-mpic/4525599/2a0000018a655890b9bd8cff005c87b4ee1f/orig" alt="Роутер Speedy">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Роутер Speedy</div>
+        <div class="card-price">1 899 ₽</div>
+      </div>
+      <div class="card-hover-info">Wi-Fi 5, высокая скорость.</div>
+    </div>
+
+        <!-- Карточка 6 -->
+    <div class="card gadgets show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/get-mpic/5269959/img_id7758905209008031786.png/optimize" alt="Телефон XPhone">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Телефон XPhone</div>
+        <div class="card-price">19 990 ₽</div>
+      </div>
+      <div class="card-hover-info">Камера 48 Мп, быстрая зарядка.</div>
+    </div>
+
+        <!-- Карточка 7 -->
+    <div class="card peripherals show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/i?id=51daa96bf20005b9c5c1fa0a84b92f1c_l-5308991-images-thumbs&n=13" alt="Монитор UltraHD">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Монитор UltraHD</div>
+        <div class="card-price">15 499 ₽</div>
+      </div>
+      <div class="card-hover-info">4K, 27 дюймов.</div>
+    </div>
+
+        <!-- Карточка 8 -->
+    <div class="card peripherals show">
+      <div class="image-wrapper">
+        <img src="https://basket-13.wbbasket.ru/vol1992/part199298/199298336/images/big/5.webp" alt="Клавиатура SlimKey">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Клавиатура SlimKey</div>
+        <div class="card-price">1 299 ₽</div>
+      </div>
+      <div class="card-hover-info">Мембранная, подсветка.</div>
+    </div>
+
+        <!-- Карточка 9 -->
+    <div class="card peripherals show">
+      <div class="image-wrapper">
+        <img src="https://img.ltwebstatic.com/images3_spmp/2024/01/17/85/170547682815b15b3bc86f8cbc04694eeb6e868b36_square_thumbnail_405x552.jpg" alt="Мышь ProMouse">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Мышь ProMouse</div>
+        <div class="card-price">899 ₽</div>
+      </div>
+      <div class="card-hover-info">Беспроводная, 1600 DPI.</div>
+    </div>
+
+        <!-- Карточка 10 -->
+    <div class="card network show">
+      <div class="image-wrapper">
+        <img src="https://basket-15.wbbasket.ru/vol2338/part233865/233865640/images/big/1.webp" alt="USB-накопитель 64ГБ">
+      </div>
+      <div class="card-content">
+        <div class="card-title">USB-накопитель 64ГБ</div>
+        <div class="card-price">599 ₽</div>
+      </div>
+      <div class="card-hover-info">USB 3.0, металлический корпус.</div>
+    </div>
+
+        <!-- Карточка 11 -->
+    <div class="card peripherals show">
+      <div class="image-wrapper">
+        <img src="https://m.media-amazon.com/images/I/71N++WQnA7L.jpg" alt="Веб-камера HD">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Веб-камера HD</div>
+        <div class="card-price">1 499 ₽</div>
+      </div>
+      <div class="card-hover-info">720p, встроенный микрофон.</div>
+    </div>
+
+    <!-- Карточка 12 -->
+    <div class="card home show">
+      <div class="image-wrapper">
+        <img src="https://bch7al.ma/7632-thickbox_default/samsung-imp-laser-couleur-ref-clp-36518-ppm-n-4-ppm-clp-365-xsg.jpg" alt="Принтер LaserJet">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Принтер LaserJet</div>
+        <div class="card-price">8 990 ₽</div>
+      </div>
+      <div class="card-hover-info">Лазерный, черно-белая печать.</div>
+    </div>
+
+    <!-- Карточка 13 -->
+    <div class="card audio show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/get-mpic/11004988/2a0000018abd09440757c8873a8e9bb18881/orig" alt="Колонка SoundBox">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Колонка SoundBox</div>
+        <div class="card-price">2 499 ₽</div>
+      </div>
+      <div class="card-hover-info">Bluetooth, мощные басы.</div>
+    </div>
+
+    <!-- Карточка 14 -->
+    <div class="card entertainment show">
+      <div class="image-wrapper">
+        <img src="https://basket-17.wbbasket.ru/vol2633/part263350/263350833/images/big/1.webp" alt="Игровая консоль MiniPlay">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Игровая консоль MiniPlay</div>
+        <div class="card-price">6 499 ₽</div>
+      </div>
+      <div class="card-hover-info">Предустановленные игры.</div>
+    </div>
+
+    <!-- Карточка 15 -->
+    <div class="card network show">
+      <div class="image-wrapper">
+        <img src="https://basket-04.wbbasket.ru/vol590/part59069/59069465/images/big/1.webp" alt="Флешка 128ГБ">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Флешка 128ГБ</div>
+        <div class="card-price">899 ₽</div>
+      </div>
+      <div class="card-hover-info">USB-C, высокая скорость.</div>
+    </div>
+
+    <!-- Карточка 16 -->
+    <div class="card home show">
+      <div class="image-wrapper">
+        <img src="https://basket-15.wbbasket.ru/vol2397/part239756/239756748/images/big/1.webp" alt="Смарт-лампа Luma">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Смарт-лампа Luma</div>
+        <div class="card-price">1 799 ₽</div>
+      </div>
+      <div class="card-hover-info">RGB, управление со смартфона.</div>
+    </div>
+
+    <!-- Карточка 17 -->
+    <div class="card gadgets show">
+      <div class="image-wrapper">
+        <img src="https://like-mobile.ru/img/product/33/1.jpg" alt="Повербанк 20000mAh">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Повербанк 20000mAh</div>
+        <div class="card-price">2 299 ₽</div>
+      </div>
+      <div class="card-hover-info">Быстрая зарядка, 2 выхода.</div>
+    </div>
+
+    <!-- Карточка 18 -->
+    <div class="card entertainment show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/i?id=5675c4ff06b0fe2ed0844299750e5d66_l-5239515-images-thumbs&n=13" alt="Камера InstaPic">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Камера InstaPic</div>
+        <div class="card-price">4 999 ₽</div>
+      </div>
+      <div class="card-hover-info">Моментальная печать фото.</div>
+    </div>
+
+    <!-- Карточка 19 -->
+    <div class="card audio show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/get-mpic/5287705/img_id7222153046407961199.jpeg/orig" alt="Микрофон StudioMic">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Микрофон StudioMic</div>
+        <div class="card-price">3 299 ₽</div>
+      </div>
+      <div class="card-hover-info">Студийное качество записи.</div>
+    </div>
+
+    <!-- Карточка 20 -->
+    <div class="card home show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/i?id=e98db85088b247688531b250ebcc6854_l-5241728-images-thumbs&n=13" alt="Пылесос RoboClean">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Пылесос RoboClean</div>
+        <div class="card-price">11 990 ₽</div>
+      </div>
+      <div class="card-hover-info">Робот-пылесос с навигацией.</div>
+    </div>
+
+    <!-- Карточка 21 -->
+    <!-- <div class="card LEEE show">
+      <div class="image-wrapper">
+        <img src="https://avatars.mds.yandex.net/i?id=a3740f08e24f809c52541091ff80c2b2_l-4937330-images-thumbs&n=13" alt="ЛЕЕЕ">
+      </div>
+      <div class="card-content">
+        <div class="card-title">ЛЕЕЕ</div>
+        <div class="card-price">ЛЕЕЕ 10 000 ₽</div>
+      </div>
+      <div class="card-hover-info">ЛЕЕЕ</div>
+    </div>  -->
+  </main>
+  
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" alt="Увеличенное изображение">
+    <p id="modalText"></p>
+  </div>
+</div>
+
+
+
+
+<script>
+  // Функция для фильтрации карточек
+  function filterCards(category) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.classList.remove('show');
+      if (category === 'all' || card.classList.contains(category)) {
+        card.classList.add('show');
+      }
+    });
+  }
+
+  // Выбираем все контейнеры изображений и обрабатываем клики для снятия блюра
+  document.querySelectorAll('.image-wrapper').forEach(container => {
+    container.addEventListener('click', () => {
+      const img = container.querySelector('img');
+      const card = container.closest('.card');
+
+      // Проверяем, был ли уже снят блюр для этого изображения
+      if (!img.classList.contains('clear')) {
+        img.classList.add('clear'); // Снимаем блюр с изображения
+      } else {
+        // Открываем карточку, если блюр уже снят
+        const title = card.getAttribute('data-title');
+        const price = card.getAttribute('data-price');
+        const info = card.getAttribute('data-info');
+        
+        // Открываем модальное окно с картинкой и описанием
+        modalImage.src = img.src;
+        // modalText.innerHTML = `<strong>${title}</strong><br>${price}<br>${info}`; // <---- Удалить чтобы убрать "Null"
+        modal.style.display = "block";
+      }
+    });
+  });
+
+  // Модальное окно
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modalImage");
+  const modalText = document.getElementById("modalText");
+
+  // Закрытие модального окна
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // Закрытие модального окна при клике вне его области
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+
+
+
+
+</body>
+</html>
