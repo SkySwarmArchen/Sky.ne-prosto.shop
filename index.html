@@ -280,7 +280,7 @@
     </div>
 
     <!-- Карточка 21 -->
-    <!--  <div class="card LEEE show" data-title="ЛЕЕЕ1" data-info="Описание товара ЛЕЕЕ">
+    <!-- <div class="card LEEE show" data-title="ЛЕЕЕ1" data-info="Описание товара ЛЕЕЕ">
       <div class="image-wrapper">
         <img src="https://avatars.mds.yandex.net/i?id=a3740f08e24f809c52541091ff80c2b2_l-4937330-images-thumbs&n=13" alt="ЛЕЕЕ">
       </div>
@@ -289,7 +289,7 @@
         <div class="card-price">10 000 ₽</div>
       </div>
       <div class="card-hover-info">Подробнее о ЛЕЕЕ</div>
-    </div>  -->
+    </div> -->
   
 <!-- Модальное окно -->
 <div id="modal" class="modal">
@@ -353,7 +353,7 @@
         const description = card.getAttribute('data-info');
 
         modalImage.src = img.src;
-        modalTitle.textContent = title || "Название товара";
+        modalTitle.textContent = title || "Название товара отсутствует";
         modalText.textContent = description || "Описание товара отсутствует.";
         
         modal.style.display = "block";
