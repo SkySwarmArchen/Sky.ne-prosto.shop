@@ -280,27 +280,30 @@
     </div>
 
     <!-- Карточка 21 -->
-    <!-- <div class="card LEEE show">
+    <div class="card LEEE show" data-title="ЛЕЕЕ1" data-info="Описание товара ЛЕЕЕ">
       <div class="image-wrapper">
         <img src="https://avatars.mds.yandex.net/i?id=a3740f08e24f809c52541091ff80c2b2_l-4937330-images-thumbs&n=13" alt="ЛЕЕЕ">
       </div>
       <div class="card-content">
         <div class="card-title">ЛЕЕЕ</div>
-        <div class="card-price">ЛЕЕЕ 10 000 ₽</div>
+        <div class="card-price">10 000 ₽</div>
       </div>
-      <div class="card-hover-info">ЛЕЕЕ</div>
-    </div>  -->
-  </main>
+      <div class="card-hover-info">Подробнее о ЛЕЕЕ</div>
+    </div>
   
 <!-- Модальное окно -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal()">&times;</span>
-    <img id="modalImage" alt="Увеличенное изображение">
-    <p id="modalText"></p>
+    <div class="modal-body">
+      <img id="modalImage" alt="Увеличенное изображение">
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+      </div>
+    </div>
   </div>
 </div>
-
 
 
 
@@ -316,46 +319,51 @@
     });
   }
 
-  // Выбираем все контейнеры изображений и обрабатываем клики для снятия блюра
-  document.querySelectorAll('.image-wrapper').forEach(container => {
-    container.addEventListener('click', () => {
-      const img = container.querySelector('img');
-      const card = container.closest('.card');
-
-      // Проверяем, был ли уже снят блюр для этого изображения
-      if (!img.classList.contains('clear')) {
-        img.classList.add('clear'); // Снимаем блюр с изображения
-      } else {
-        // Открываем карточку, если блюр уже снят
-        const title = card.getAttribute('data-title');
-        const price = card.getAttribute('data-price');
-        const info = card.getAttribute('data-info');
-        
-        // Открываем модальное окно с картинкой и описанием
-        modalImage.src = img.src;
-        // modalText.innerHTML = `<strong>${title}</strong><br>${price}<br>${info}`; // <---- Удалить чтобы убрать "Null"
-        modal.style.display = "block";
-      }
-    });
-  });
-
   // Модальное окно
   const modal = document.getElementById("modal");
   const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
   const modalText = document.getElementById("modalText");
 
   // Закрытие модального окна
   function closeModal() {
     modal.style.display = "none";
+
+    document.body.style.overflow = '';  // <--- Возвращаем прокрутку
   }
 
-  // Закрытие модального окна при клике вне его области
+  // Закрытие при клике вне модального контента
   window.onclick = function (event) {
     if (event.target == modal) {
       closeModal();
     }
   }
+
+  // Выбираем все контейнеры изображений
+  document.querySelectorAll('.image-wrapper').forEach(container => {
+    container.addEventListener('click', () => {
+      const img = container.querySelector('img');
+      const card = container.closest('.card');
+
+      if (!img.classList.contains('clear')) {
+        img.classList.add('clear'); // Снимаем блюр
+      } else {
+        // Открываем карточку
+        const title = card.getAttribute('data-title');
+        const description = card.getAttribute('data-info');
+
+        modalImage.src = img.src;
+        modalTitle.textContent = title || "Название товара";
+        modalText.textContent = description || "Описание товара отсутствует.";
+        
+        modal.style.display = "block";
+
+        document.body.style.overflow = 'hidden';  // <--- Блокируем прокрутку
+      }
+    });
+  });
 </script>
+
 
 
 
